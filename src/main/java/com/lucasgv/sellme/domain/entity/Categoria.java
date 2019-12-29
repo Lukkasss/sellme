@@ -1,7 +1,8 @@
-package com.lucasgv.sellme.domain;
+package com.lucasgv.sellme.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
