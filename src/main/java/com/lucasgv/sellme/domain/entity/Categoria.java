@@ -4,15 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Categoria implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -22,4 +19,13 @@ public class Categoria implements Serializable {
     private long id;
     private String nome;
 
+    @ManyToMany(mappedBy = "categoriaList")
+    private List<Produto> produtoList = new ArrayList<>();
+
+    public Categoria() {
+    }
+
+    public Categoria(String nome) {
+        this.nome = nome;
+    }
 }
