@@ -1,5 +1,6 @@
 package com.lucasgv.sellme.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class Categoria implements Serializable {
     private long id;
     private String nome;
 
+    @JsonManagedReference
     @ManyToMany(mappedBy = "categoriaList")
     private List<Produto> produtoList = new ArrayList<>();
 

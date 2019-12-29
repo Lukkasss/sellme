@@ -1,5 +1,6 @@
 package com.lucasgv.sellme.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class Produto  implements Serializable {
     private String nome;
     private Double preco;
 
+    @JsonBackReference
     @ManyToMany
     @JoinTable(name = "produto_categoria",
                 joinColumns = @JoinColumn(name = "produto_id"),
